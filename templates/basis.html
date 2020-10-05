@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Thomas Polzer</title>
+  <meta charset="utf-8">
+    {% load static %}
+  <link rel="stylesheet" href="{% static  "lib/bootstrap-4.5.2-dist/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static  "css/settings.css" %}">
+  <script src="{% static  "lib/jquery/jQuery.js" %}"></script>
+  <script src="{% static  "lib/popper/popper.min.js" %}"></script>
+  <script src="{% static  "lib/bootstrap-4.5.2-dist/js/bootstrap.min.js" %}"></script>
+   <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+<!-- entire container -->
+<div class="container pt-1">
+
+<!-- Navigation bar -->
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark rounded">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Logo</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 2</a>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Dropdown link
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+  </ul>
+
+<!--   search field, aligned to the right  -->
+  <form class="form-inline ml-auto" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+
+</nav>
+
+<!-- end of Navigation bar -->
+
+
+{% block content %}
+<!-- Carousel -->
+<!--<div id="demo" class="carousel slide mt-1" data-ride="carousel">
+  &lt;!&ndash; Indicators &ndash;&gt;
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  &lt;!&ndash; The slideshow &ndash;&gt;
+  <div class="carousel-inner rounded">
+    <div class="carousel-item active">
+      <img src="{% static "img/Falaises_Agde.jpg" alt="Cap d'Agde Klippen" %}">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "img/Falaises2_Agde.jpg" alt="Cap d'Agde Klippen" %}">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "img/CentrePort.jpg" alt="Cap d'Agde Yachthafen" %}">
+    </div>
+  </div>
+  &lt;!&ndash; Left and right controls &ndash;&gt;
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>-->
+<!-- End of Carousel -->
+
+<!-- end of entire container -->
+
+{% endblock %}
+
+</div>
+
+
+</body>
+</html>

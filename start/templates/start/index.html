@@ -1,0 +1,39 @@
+{% extends "basis.html" %}
+
+{% block title %}Startseite{% endblock %}
+
+{% block content %}
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide mt-1" data-ride="carousel">
+<!--Indicators-->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+<!--The slideshow-->
+  <div class="carousel-inner rounded">
+    <div class="carousel-item active">
+        {% load static %}
+      <img src="{% static "img/Falaises_Agde.jpg" alt="Cap d'Agde Klippen" %}">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "img/Falaises2_Agde.jpg" alt="Cap d'Agde Klippen" %}">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "img/CentrePort.jpg" alt="Cap d'Agde Yachthafen" %}">
+    </div>
+  </div>
+<!--Left and right controls-->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<!-- End of Carousel -->
+
+{% endblock %}
+
