@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'start.apps.StartConfig',
 ]
 
 MIDDLEWARE = [
@@ -52,10 +53,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+## setting a global template path (for basis.html which is to be applied for all applications)
+MASTER_BASE_DIR = os.path.dirname('/home/ubuntu/PycharmProjects/pythonProject/mysite/')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(MASTER_BASE_DIR, 'templates'),
+                 ## add some other (fully qualified) path names, e.g. '/home/ubuntu/PycharmProjects/pythonProject/
+                 # start/templates'
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
