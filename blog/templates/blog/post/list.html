@@ -1,8 +1,9 @@
-{% extends "blog/base.html" %}
+{% extends "basis.html" %}
 
 {% block title %}My Blog{% endblock %}
 
 {% block content %}
+{% with page=posts %}
   <h1>My Blog</h1>
   {% for post in posts %}
     <h2>
@@ -16,4 +17,33 @@
     {{ post.body|truncatewords:30|linebreaks }}
   {% endfor %}
 
+
+
+<nav aria-label="Page navigation blogs">
+  <ul class="pagination">
+    {% if page.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page={{page.previous_page_number}}">Vorherige Seite</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="?page=1">Vorherige Seite</a></li>
+    {% endif %}
+    {% for curr_page in page.paginator.page_range %}
+    {% if curr_page == page.number %}
+    <li class="page-item active"><a class="page-link" href="?page={{curr_page}}">{{curr_page}}</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page={{curr_page}}">{{curr_page}}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if page.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{page.next_page_number}}">Nächste Seite</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="?page={{page.paginator.num_pages}}">Nächste Seite</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
+
+
+
+
+{% endwith %}
 {% endblock %}
