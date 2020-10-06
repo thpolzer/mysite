@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "basis.html" %}
 
 {% block title %} {{ post.title }} {% endblock %}
 
@@ -8,4 +8,5 @@
     Published {{ post.publish }} by {{ post.author }}
   </p>
   {{ post.body|linebreaks }}
+
 {% endblock %}
